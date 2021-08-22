@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:rest_api/services/note_service.dart';
 import 'package:rest_api/views/note_list.dart';
 
+void setupLocator() {
+  GetIt.instance.registerLazySingleton(() => NoteService());
+  // instance can be write as I
+}
+
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
